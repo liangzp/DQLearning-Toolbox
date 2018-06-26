@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<script src='/static/jquery.js'></script>
+<script src='/static/highstock.js'></script>
+<script src='/static/exporting.js'></script>
+
+</head>
+<body>
+
+	<div id="container" style="min-width:310px;height:400px"></div>
+
+	<script>
+$(function () {
+    // 使用当前时区，否则东八区会差八个小时
+    Highcharts.setOptions({
+        global: {
+            useUTC: false
+        }
+    });
+    $.getJSON('/data', function (data) {
+        // Create the chart
+        $('#container').highcharts('StockChart', {
+        chart:{
+        events:{
+        
+            load:function(){
+            
+                var series = this.series[0]
+                setInterval(function(){
+                $.getJSON('/data',function(res){
+                    $.each(res,function(i,v){
+                        series.addPoint(v)
+                    })
+                })
+                },3000)
+            }
+        }
+        },
+            rangeSelector : {
+                selected : 1
+            },
+            title : {
+                text : '每局分数'
+            },
+            series : [{
+                name : '训练表现',
+                data : data,
+                tooltip: {
+                    valueDecimals: 2
+                }
+            }]
+        });
+    });
+});
+</script>
+</body>
+</html>

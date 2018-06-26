@@ -1,0 +1,24 @@
+<RCC>
+  <qresource prefix="image">
+    <file>resource/2230ae54da0c3817935871c992c6b79a.png</file>
+    <file>resource/Background.png</file>
+  </qresource>
+  <qresource prefix="list">
+    <file>resource/下拉框.png</file>
+  </qresource>
+  <qresource prefix="background">
+    <file>resource/背景.png</file>
+  </qresource>
+  <qresource prefix="bottom">
+    <file>resource/菜单.png</file>
+    <file>resource/关闭.png</file>
+    <file>resource/最小化.png</file>
+    <file>resource/空白模式.png</file>
+    <file>resource/设置.png</file>
+    <file>resource/设置2.png</file>
+    <file>resource/加载模式.png</file>
+    <file>resource/终止按钮.png</file>
+    <file>resource/开始按钮.png</file>
+    <file>resource/暂停按钮.png</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="image">
+    <file>resource/设定取消按钮.png</file>
+    <file>resource/设定确定按钮.png</file>
+    <file>resource/Base.png</file>
+    <file>resource/Handle.png</file>
+    <file>resource/Progress.png</file>
+  </qresource>
+  <qresource prefix="background">
+    <file>resource/设定背景.png</file>
+  </qresource>
+</RCC>
