@@ -5,10 +5,10 @@
 算法进行测试学习。该工具箱可以帮助人们在同一个窗口内检测训练情况和调参。
 
 ## 配置情况
-*Python 3
-*TensorFlow-gpu
-*pygame
-*OpenCV-Python
+* Python 3
+* TensorFlow-gpu
+* pygame
+* OpenCV-Python
 
 ## 如何运行？
 运行run_window.py可启动窗口
