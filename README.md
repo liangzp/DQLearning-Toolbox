@@ -1,32 +1,16 @@
-# 强化学习工具箱(DRLToolbox)
+#强化学习工具箱(DRLToolbox)
 
-## 概述
+##概述
 该项目建立了一个集成强化学习训练、训练结果可视化、调参等功能于一体的工具箱，使用小游戏对
 算法进行测试学习。该工具箱可以帮助人们在同一个窗口内检测训练情况和调参。
 
-## 配置情况
+##配置情况
 * Python 3
-* TensorFlow-gpu (推荐使用GPU加速，因此需要用户自己配置)
+* TensorFlow-gpu
 * pygame
 * OpenCV-Python
-* PyQt5
-* collection
-* threading
-* multiprocessing
-* shelve
-* socket
-* pyperclip
-* flask
-* shutil
-* sqlite3
-* importlib
-* time
-* glob
-* sys
 
-
-
-## 如何运行？
+##如何运行？
 运行run_window.py可启动窗口
 + 启动界面
 
@@ -41,23 +25,23 @@
   ![设置窗口](设置窗口.png)
 
 
-### 其他功能详见项目大报告
+###其他功能详见项目大报告
 
-## 什么是强化学习？
+##什么是强化学习？
 详见报告
 
-## 最终表现
+##最终表现
 以贪吃蛇为例，经过超过500万次训练（超过48小时），一共完成36171局，每局分数如下图：
 
-![学习表现](学习表现.png)
+![picture2](picture2.png)
 
 截取一个片段如下：
 
 ![贪吃蛇终板](贪吃蛇终板.gif)
 
-跳跳人目前训练了180万次，一共完成3611局，每局存活帧数如下图（每秒60帧）
+跳跳人目前训练了500万次，一共完成3886局，每局存活帧数如下图
 
-![跳跳人](跳跳人.png)
+![picture](picture.png)
 
 
 截取一个片段如下：
@@ -66,7 +50,7 @@
 
 
 
-## Deep Q-Network Algorithm
+##Deep Q-Network Algorithm
 ```python
 Initialize replay memory D to size N
 Initialize action-value function Q with random weights
@@ -86,17 +70,18 @@ for episode = 1, M do
 end for
 ```
 
-## 开发者
-**中山大学 岭南学院**梁智鹏、陈昊、张意伟,同时感谢**中山大学岭南学院**张宏斌副教授指导和 **中山大学数学学院**付星宇的理论指导
+##开发者
+**中山大学 岭南学院**      梁智鹏  陈昊  张意伟
+同时感谢**中山大学 数学学院**    付星宇 的理论指导
 
-## 参考文献
+##参考文献
 [1] Mnih Volodymyr, Koray Kavukcuoglu, David Silver, Andrei A. Rusu, Joel Veness, Marc G. Bellemare, Alex Graves, Martin Riedmiller, Andreas K. Fidjeland, Georg Ostrovski, Stig Petersen, Charles Beattie, Amir Sadik, Ioannis Antonoglou, Helen King, Dharshan Kumaran, Daan Wierstra, Shane Legg, and Demis Hassabis. **Human-level Control through Deep Reinforcement Learning**. Nature, 529-33, 2015.
 
 [2] Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Alex Graves, Ioannis Antonoglou, Daan Wierstra, and Martin Riedmiller. **Playing Atari with Deep Reinforcement Learning**. NIPS, Deep Learning workshop
 
 [3] Kevin Chen. **Deep Reinforcement Learning for Flappy Bird** [Report](http://cs229.stanford.edu/proj2015/362_report.pdf) | [Youtube result](https://youtu.be/9WKBzTUsPKc)
 
-[4] Flood Sung. **Deep Reinforcement Learning 基础知识（DQN方面）** https://blog.csdn.net/songrotek/article/details/50580904
+[4] Flood Sung. **Deep Reinforcement Learning 基础知识（DQN方面）**https://blog.csdn.net/songrotek/article/details/50580904
 
 [5]Giannoccarro Ilaria and Peperpaolo Pontrandolfo. **Inventory management in supply chains: a reinforcement learning approach**, *International Journal of Production economics*, 2002, 153-161
 
