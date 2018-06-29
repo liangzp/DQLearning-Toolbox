@@ -15,7 +15,8 @@ from DQL import AI
 import setting
 import message_box
 import flask_tk
-
+import glob
+import shutil
 
 game_start=False
 
@@ -244,7 +245,7 @@ class MAINWINDOW(QtWidgets.QWidget):
         except:
             pass
         else:
-            actual_timestep=self.actual_timestep+self.state["TIMESTEP"]
+            actual_timestep=self.state["TIMESTEP"]
             self.progressBar.setToolTip("Timestep:"+str(actual_timestep)+"    STATE:"+self.state["STATE"]+"     EPSILON:"+str(self.state["EPSILON"]))
             self.progressBar.setProperty("value",min(float(actual_timestep)/float(self.setting_form.getSetting()["Explore"])*100,100))
 
@@ -286,11 +287,17 @@ class MAINWINDOW(QtWidgets.QWidget):
             #启动对话框
             reply = self.message_box.exec_()
             if reply:
+                # 关闭游戏窗口
+                try:
+                    self.game_thread.AI.closeGame()
+                except:
+                    pass
                 #新建模式
                 if not self.program_name:
                     save_program_path = QtWidgets.QFileDialog.getSaveFileName(self, "请选择你保存项目的位置",
                                                                          "../",
                                                                          "Program File(*.db)")
+
                     #确保完成了完整保存操作后再进行操作
                     if save_program_path:
                         #获取保存的程序地址和名称（无后缀）
@@ -320,7 +327,7 @@ class MAINWINDOW(QtWidgets.QWidget):
                 #加载模式
                 else:
                     program_name=self.program_name
-
+                    print(program_name)
                     with shelve.open(program_name+'.db', writeback=True) as f:
                         # AI运行的状态
                         state = self.game_thread.AI.getState()
@@ -333,17 +340,18 @@ class MAINWINDOW(QtWidgets.QWidget):
 
                     #保存模型
                     time=state["TIMESTEP"]
-                    name = "network-dqn-" + str(time//1000 * 1000)
-                    os.rename('./saved_networks/' + name + ".data-00000-of-00001",
-                              program_name+".data-00000-of-00001")
-                    os.rename('./saved_networks/' + name + ".index",  program_name+ ".index")
-                    os.rename('./saved_networks/' + name + ".meta",  program_name+".meta")
+                    program_name=program_name.split('/')[-1]
+                    for file in glob.glob("./saved_networks/network-dqn-*"):
+                        postfix = file.split('.')[-1]
+                        print(file, program_name + '.' + postfix)
+                        shutil.copy(file, program_name+'.'+postfix)
+                    shutil.rmtree('./saved_networks')
+                    # os.rename('./saved_networks/' + name + ".data-00000-of-00001",
+                    #           program_name+".data-00000-of-00001")
+                    # os.rename('./saved_networks/' + name + ".index",  program_name+ ".index")
+                    # os.rename('./saved_networks/' + name + ".meta",  program_name+".meta")
 
-        #关闭游戏窗口
-        try:
-            self.game_thread.AI.closeGame()
-        except:
-            pass
+
 
         #清空临时数据库
         with sqlite3.connect('temp.db', check_same_thread=False) as f:
