@@ -9,6 +9,21 @@
 * TensorFlow-gpu
 * pygame
 * OpenCV-Python
+* PyQt5
+* collection
+* threading
+* multiprocessing
+* shelve
+* socket
+* pyperclip
+* flask
+* shutil
+* sqlite3
+* importlib
+* time
+* glob
+* sys
+**tensorflow推荐使用GPU加速，因此需要用户自己配置**
 
 ## 如何运行？
 运行run_window.py可启动窗口
