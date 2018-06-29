@@ -6,7 +6,7 @@
 
 ## 配置情况
 * Python 3
-* TensorFlow-gpu  **tensorflow推荐使用GPU加速，因此需要用户自己配置**
+* TensorFlow-gpu (荐使用GPU加速，因此需要用户自己配置)
 * pygame
 * OpenCV-Python
 * PyQt5
