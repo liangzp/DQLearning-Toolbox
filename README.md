@@ -9,6 +9,22 @@
 * TensorFlow-gpu
 * pygame
 * OpenCV-Python
+* PyQt5
+* sys
+* threading
+* multiprocessing
+* shelve
+* os
+* sqlite3
+* socket
+* pyperclip
+* flask
+* glob
+* shutil
+* numpy
+* pandas
+* time
+* importlib
 
 ## 如何运行？
 运行run_window.py可启动窗口
@@ -25,12 +41,12 @@
   ![设置窗口](设置窗口.png)
 
 
-### 其他功能详见项目大报告
+###其他功能详见项目大报告
 
-## 什么是强化学习？
+##什么是强化学习？
 详见报告
 
-## 最终表现
+##最终表现
 以贪吃蛇为例，经过超过500万次训练（超过48小时），一共完成36171局，每局分数如下图：
 
 ![picture2](picture2.png)
@@ -50,7 +66,7 @@
 
 
 
-## Deep Q-Network Algorithm
+##Deep Q-Network Algorithm
 ```python
 Initialize replay memory D to size N
 Initialize action-value function Q with random weights
@@ -70,11 +86,10 @@ for episode = 1, M do
 end for
 ```
 
-## 开发者
-**中山大学 岭南学院**      梁智鹏  陈昊  张意伟
-同时感谢**中山大学 数学学院**    付星宇 的理论指导
+##开发者
+**中山大学 岭南学院**梁智鹏、陈昊、张意伟，同时感谢**中山大学**张宏斌副教授的悉心指导和**中山大学数学学院**付星宇的理论指导。
 
-## 参考文献
+##参考文献
 [1] Mnih Volodymyr, Koray Kavukcuoglu, David Silver, Andrei A. Rusu, Joel Veness, Marc G. Bellemare, Alex Graves, Martin Riedmiller, Andreas K. Fidjeland, Georg Ostrovski, Stig Petersen, Charles Beattie, Amir Sadik, Ioannis Antonoglou, Helen King, Dharshan Kumaran, Daan Wierstra, Shane Legg, and Demis Hassabis. **Human-level Control through Deep Reinforcement Learning**. Nature, 529-33, 2015.
 
 [2] Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Alex Graves, Ioannis Antonoglou, Daan Wierstra, and Martin Riedmiller. **Playing Atari with Deep Reinforcement Learning**. NIPS, Deep Learning workshop
